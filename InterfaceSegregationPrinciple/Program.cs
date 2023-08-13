@@ -13,16 +13,94 @@
 
     public class EnemyUnit : IMovable, IDamageable, IDamageDealer, ITurnable
     {
+        public float MoveSpeed { get; set; }
+        public float Acceleration { get; set; }
+        public float TopSpeed { get; set; }
+        public float HitPoints { get; set; }
+        public int Defense { get; set; }
+        public float Damage { get; set; }
+        public int AttackRatio { get; set; }
+        public float TurnSpeed { get; set; }
 
+        public void Attack()
+        {
+        }
+
+        public void Die()
+        {
+        }
+
+        public void GoBackward()
+        {
+        }
+
+        public void GoForward()
+        {
+        }
+
+        public void TakeDamage()
+        {
+        }
+
+        public void TurnLeft()
+        {
+        }
+
+        public void TurnRight()
+        {
+        }
     }
     public class AllyUnit : IDamageable, IDamageDealer, ITurnable, IBuyable
     {
+        public float HitPoints { get; set; }
+        public int Defense { get; set; }
+        public float Damage { get; set; }
+        public int AttackRatio { get; set; }
+        public float TurnSpeed { get; set; }
+        public float Price { get; set; }
+        public float RefundFee { get; set; }
 
+        public void Attack()
+        {
+        }
+
+        public void Die()
+        {
+        }
+
+        public void TakeDamage()
+        {
+        }
+
+        public void TurnLeft()
+        {
+        }
+
+        public void TurnRight()
+        {
+        }
     }
 
     public class ObstacleUnit : IDamageable, IDamageDealer, IBuyable
     {
+        public float HitPoints { get; set; }
+        public int Defense { get; set; }
+        public float Damage { get; set; }
+        public int AttackRatio { get; set; }
+        public float Price { get; set; }
+        public float RefundFee { get; set; }
 
+        public void Attack()
+        {
+        }
+
+        public void Die()
+        {
+        }
+
+        public void TakeDamage()
+        {
+        }
     }
 
     public interface IBuyable

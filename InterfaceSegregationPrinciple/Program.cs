@@ -15,17 +15,21 @@
     {
 
     }
-    public class AllyUnit : IDamageable, IDamageDealer, ITurnable
+    public class AllyUnit : IDamageable, IDamageDealer, ITurnable, IBuyable
     {
 
     }
 
-    public class Obstacle : IDamageable, IDamageDealer
+    public class ObstacleUnit : IDamageable, IDamageDealer, IBuyable
     {
 
     }
 
-
+    public interface IBuyable
+    {
+        float Price { get; set; }
+        float RefundFee { get; set; }
+    }
 
     public interface IMovable
     {
@@ -60,19 +64,22 @@
 
 
 
-
-
-
-
     //Bad Design
+
     /*
     public class EnemyUnit : IUnitAbilities
     {
-
+        // No need for Price, RefundFee on the EnemyUnit
     }
     public class AllyUnit : IUnitAbilities
     {
+        // No need for MoveSpeed, Acceleration, TopSpeed, GoForward(), GoBackward() on the AllyUnit
+    }
 
+    public class ObstacleUnit : IUnitAbilities
+    {
+        // No need for TurnSpeed, TurnLeft(), TurnRight(), MoveSpeed, Acceleration, 
+        // TopSpeed, GoForward(), GoBackward() on the ObstacleUnit
     }
 
     public interface IUnitAbilities

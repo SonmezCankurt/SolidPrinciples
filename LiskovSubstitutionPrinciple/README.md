@@ -4,21 +4,49 @@ The Liskov Substitution Principle (LSP) states that objects of a derived class m
 
 ## Applying Liskov Substitution Principle
 
-Consider the example of road and rail vehicles that implement the IMovable and ITurnable interfaces. In a well-designed implementation, the Car and Truck classes are derived from the RoadVehicle class, and the Train and Tram classes are derived from the RailVehicle class.
+Consider the example of road and rail vehicles that implement the IMovable and ITurnable interfaces.
 
 
 ## Bad Design
 
-In the bad design, the `Train` class does not fully adhere to the `ITurnable` interface as required by LSP. This violates the principle, as replacing an instance of the `RailVehicle` base class with an instance of the `Train` derived class might lead to unexpected behavior in scenarios where turning is involved.
+In the bad design example, the `Train` class inherits from the `Vehicle` class, but it violates the LSP. The `TurnLeft` and `TurnRight` methods, which are part of the behavior defined by the `Vehicle` class, are not applicable to the `Train` class. This violation makes it problematic to use instances of the `Train` class interchangeably with instances of the `Vehicle` class, as it contradicts the expected behavior.
 
 ```C#
-public class Train : RailVehicle
-{   
-    // No need for TurnLeft and TurnRight on the train
+public class Vehicle
+{
+    public float Speed = 10f;
+
+    public void GoForward()
+    {
+        // Implementation details...
+    }
+
+    public void Reverse()
+    {
+        // Implementation details...
+    }
+
+    public void TurnRight()
+    {
+        // Implementation details...
+    }
+
+    public void TurnLeft()
+    {
+        // Implementation details...
+    }
 }
+
+public class Train : Vehicle
+{
+    // Train-specific implementation, no need for TurnLeft and TurnRight
+}
+
 ```
 
 ## Good Design
+
+In the good design , the `Car` and `Truck` classes derive from the foundational `RoadVehicle` class, while the `Train` and `Tram` classes inherit attributes from the `RailVehicle` class. This design strategy not only promotes code reusability but also ensures a structured and organized hierarchy within the system.
 
 ```C#
 public interface ITurnable

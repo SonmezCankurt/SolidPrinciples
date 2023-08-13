@@ -8,11 +8,91 @@ Consider the example of generating student reports. In a well-designed implement
 
 ## Good Design
 
-In the good design, the Student class is responsible for storing student information, the GradeCalculator class calculates average grades, and the ReportGenerator class generates reports based on student data. Each class has a single, well-defined responsibility.
+In the good design, the `Student` class is responsible for storing student information, the `GradeCalculator` class calculates average grades, and the `ReportGenerator` class generates reports based on student data. Each class has a single, well-defined responsibility.
+
+ ```C#
+class Student
+{
+    public string Name { get; set; }
+    public List<int> Grades { get; set; }
+
+    public Student(string name, List<int> grades)
+    {
+        Name = name;
+        Grades = grades;
+    }
+}
+
+class GradeCalculator
+{
+    public double CalculateAverageGrade(List<int> grades)
+    {
+        double sum = 0;
+        foreach (int grade in grades)
+        {
+            sum += grade;
+        }
+        return sum / grades.Count;
+    }
+}
+
+class ReportGenerator
+{
+    public void GenerateReport(string studentName, double averageGrade)
+    {
+        Console.WriteLine($"Student: {studentName}");
+        Console.WriteLine($"Average Grade: {averageGrade}");
+        if (averageGrade >= 70)
+        {
+            Console.WriteLine("Status: Passed");
+        }
+        else
+        {
+            Console.WriteLine("Status: Failed");
+        }
+    }
+}
+ ```
 
 
 ## Bad Design
 
-In the bad design, the Student class has multiple responsibilities: storing student information, calculating average grades, and generating reports. This violates the SRP by bundling different responsibilities within a single class.
+In the bad design, the  `Student` class has multiple responsibilities: storing student information, calculating average grades, and generating reports. This violates the SRP by bundling different responsibilities within a single class.
+
+ ```C#
+class Student
+{
+    public string Name { get; set; }
+    public List<int> Grades { get; set; }
+
+    public double CalculateAverageGrade()
+    {
+        double sum = 0;
+        foreach (int grade in Grades)
+        {
+            sum += grade;
+        }
+        return sum / Grades.Count;
+    }
+
+    public void GenerateReport()
+    {
+        double average = CalculateAverageGrade();
+        Console.WriteLine($"Student: {Name}");
+        Console.WriteLine($"Average Grade: {average}");
+        if (average >= 70)
+        {
+            Console.WriteLine("Status: Passed");
+        }
+        else
+        {
+            Console.WriteLine("Status: Failed");
+        }
+    }
+}
+ ```
+
+
+## Conclusion
 
 By adhering to the SRP, as demonstrated in the good design example, classes become more focused, easier to understand, and changes in one area have minimal impact on other areas. This results in a more maintainable and scalable codebase.

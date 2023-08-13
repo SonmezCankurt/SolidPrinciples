@@ -2,8 +2,47 @@
 
 The Single Responsibility Principle (SRP) states that a class should have only one reason to change. In other words, a class should have a single responsibility. This principle encourages creating classes that are focused on a specific task, ensuring a clear and maintainable codebase.
 
+## Applying Single Responsibility Principle
 
 Consider the example of generating student reports. In a well-designed implementation, the responsibilities of creating student objects, calculating average grades, and generating reports are separated into distinct classes.
+
+
+## Bad Design
+
+In the bad design, the  `Student` class has multiple responsibilities: storing student information, calculating average grades, and generating reports. This violates the SRP by bundling different responsibilities within a single class.
+
+ ```C#
+class Student
+{
+    public string Name { get; set; }
+    public List<int> Grades { get; set; }
+
+    public double CalculateAverageGrade()
+    {
+        double sum = 0;
+        foreach (int grade in Grades)
+        {
+            sum += grade;
+        }
+        return sum / Grades.Count;
+    }
+
+    public void GenerateReport()
+    {
+        double average = CalculateAverageGrade();
+        Console.WriteLine($"Student: {Name}");
+        Console.WriteLine($"Average Grade: {average}");
+        if (average >= 70)
+        {
+            Console.WriteLine("Status: Passed");
+        }
+        else
+        {
+            Console.WriteLine("Status: Failed");
+        }
+    }
+}
+ ```
 
 
 ## Good Design
@@ -53,45 +92,6 @@ class ReportGenerator
     }
 }
  ```
-
-
-## Bad Design
-
-In the bad design, the  `Student` class has multiple responsibilities: storing student information, calculating average grades, and generating reports. This violates the SRP by bundling different responsibilities within a single class.
-
- ```C#
-class Student
-{
-    public string Name { get; set; }
-    public List<int> Grades { get; set; }
-
-    public double CalculateAverageGrade()
-    {
-        double sum = 0;
-        foreach (int grade in Grades)
-        {
-            sum += grade;
-        }
-        return sum / Grades.Count;
-    }
-
-    public void GenerateReport()
-    {
-        double average = CalculateAverageGrade();
-        Console.WriteLine($"Student: {Name}");
-        Console.WriteLine($"Average Grade: {average}");
-        if (average >= 70)
-        {
-            Console.WriteLine("Status: Passed");
-        }
-        else
-        {
-            Console.WriteLine("Status: Failed");
-        }
-    }
-}
- ```
-
 
 ## Conclusion
 

@@ -4,7 +4,7 @@ The Open/Closed Principle (OCP) states that software entities should be open for
 
 ## Applying Open/Closed Principle
 
-Consider the example of an area calculator for shapes. In a well-designed implementation, shapes such as rectangles and circles adhere to the Shape abstract class, allowing new shapes to be easily added without altering existing code.
+Consider the example of an area calculator for shapes. In a well-designed implementation, shapes such as rectangles and circles adhere to the `Shape` abstract class, allowing new shapes to be easily added without altering existing code.
 
 ## Bad Design
 

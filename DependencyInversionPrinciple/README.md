@@ -107,3 +107,5 @@ class Switch
 ## Conclusion
 
 By adhering to the Dependency Inversion Principle as demonstrated in the good design example, the `Switch` class becomes more versatile and adaptable, allowing it to interact with various devices through the common `ISwitchable` interface.
+
+However, remember that each principle may have its disadvantage when taken to extremes. Inverting dependencies can occasionally introduce unnecessary complexity and make the project harder to understand, especially if not applied judiciously.

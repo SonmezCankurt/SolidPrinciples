@@ -126,3 +126,5 @@ public class Tram : RailVehicle
 ## Conclusion
 
 By adhering to the Liskov Substitution Principle, as demonstrated in the good design example, derived classes are able to seamlessly substitute their base classes, ensuring correct behavior and maintainability.
+
+However, remember that each principle may have its disadvantage when taken to extremes. Mandating consistent behavior across all subclasses can be restrictive, making design more challenging and introducing unnecessary limitations.

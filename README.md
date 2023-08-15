@@ -17,3 +17,7 @@ SOLID Principles are fundamental guidelines in software design that aim to creat
 
 These projects demonstrate how applying SOLID principles can enhance the flexibility, maintainability, and extensibility of your codebase. Understanding the effectiveness of each principle in its specific domain will help elevate the quality of your software design.
 These projects includes both good and bad design examples for each principle, along with detailed explanations.
+
+## Notice
+
+SOLID principles are essential tools for producing clean and maintainable code in software development. However, rather than going to extremes, it's important to apply these principles with flexibility and consideration for real needs. Overly adhering to each principle in every implementation can introduce unnecessary complexity. Therefore, it's crucial to apply the principles based on the specific requirements of each project and avoid unnecessary abstractions. 

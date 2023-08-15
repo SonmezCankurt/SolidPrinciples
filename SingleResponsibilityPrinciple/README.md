@@ -96,3 +96,5 @@ class ReportGenerator
 ## Conclusion
 
 By adhering to the SRP, as demonstrated in the good design example, classes become more focused, easier to understand, and changes in one area have minimal impact on other areas. This results in a more maintainable and scalable codebase.
+
+However, remember that each principle may have its disadvantage when taken to extremes. Overly divided classes can result in numerous small classes and unnecessary complexity, which might reduce code readability.

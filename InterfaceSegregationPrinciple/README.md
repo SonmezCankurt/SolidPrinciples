@@ -109,3 +109,5 @@ public interface IDamageDealer
 
 By adhering to the Interface Segregation Principle, as demonstrated in the good design example, interfaces are segregated based on specific roles and functionalities, leading to more cohesive and maintainable code.
 
+However, remember that each principle may have its disadvantage when taken to extremes. Creating too many small interfaces can increase class and application complexity, potentially making maintenance harder.
+

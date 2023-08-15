@@ -75,11 +75,13 @@ class Door : ISwitchable
     }
     public void Activate()
     {
+        isActivated = true;
         Console.WriteLine("Door is Open");
     }
 
     public void Deactivate()
     {
+        isActivated = false;
         Console.WriteLine("Door is Close");
     }
 }

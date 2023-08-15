@@ -80,3 +80,5 @@ public class AreaCalculator
 ## Conclusion
 
 By adhering to the OCP, as demonstrated in the good design example, new shapes can be seamlessly added without modifying existing code. This ensures a more extensible and maintainable codebase.
+
+However, remember that each principle may have its disadvantage when taken to extremes. Adhering to the principle can sometimes lead to added complexity and abstractions, potentially extending development time and creating unnecessarily intricate structures.

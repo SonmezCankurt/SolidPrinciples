@@ -1,6 +1,6 @@
-# SolidPrinciples
+# SOLID Principles
 
-SOLID principles are fundamental guidelines in software design that aim to create flexible, maintainable, and modular solutions. These principles help manage complexity, make code resistant to changes, and enhance codebase comprehensibility. Below, you will find SOLID principles and example projects that illustrate each principle.
+SOLID Principles are fundamental guidelines in software design that aim to create flexible, maintainable, and modular solutions. These principles help manage complexity, make code resistant to changes, and enhance codebase comprehensibility. Below, you will find SOLID Principles and example projects that illustrate each principle.
 
 
 1. [Single Responsibility Principle (SRP)](https://github.com/SonmezCankurt/SolidPrinciples/tree/master/SingleResponsibilityPrinciple)
@@ -16,3 +16,4 @@ SOLID principles are fundamental guidelines in software design that aim to creat
 
 
 These projects demonstrate how applying SOLID principles can enhance the flexibility, maintainability, and extensibility of your codebase. Understanding the effectiveness of each principle in its specific domain will help elevate the quality of your software design.
+These projects includes both good and bad design examples for each principle, along with detailed explanations.

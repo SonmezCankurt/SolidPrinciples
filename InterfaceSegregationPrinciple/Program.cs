@@ -162,6 +162,8 @@
 
     public interface IUnitAbilities
     {
+        float Price { get; set; }
+        float RefundFee { get; set; }
         float MoveSpeed { get; set; }
         float Acceleration { get; set; }
         float TopSpeed { get; set; }
